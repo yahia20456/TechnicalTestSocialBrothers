@@ -23,13 +23,17 @@ namespace TechnicalTestSocialBrothers.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<AddressInformation>>> GetAddresses( string search,  string sort,  bool isAscending)
         {
+<<<<<<< HEAD
             var addressCollection = await addresscontext.Adresses.ToListAsync();//All addresses from database
+=======
+            var addressCollection = await addresscontext.Adresses.ToListAsync();//list adress from database
+>>>>>>> 094fe2b (Second Commit)
             var filteredAddresses = new List<AddressInformation>();//empty list
             var addressProperties = typeof(AddressInformation).GetProperties();//all my properties (city,zip code ...)
             if (search != null)
             {
                 
-                foreach (AddressInformation address in addressCollection)//loop adress from db
+                foreach (AddressInformation address in addressCollection)//loop adresses from db
                 {
                     foreach (PropertyInfo propertyInfo in addressProperties)
                     {
@@ -43,10 +47,14 @@ namespace TechnicalTestSocialBrothers.Controllers
             }
             else
             {
+<<<<<<< HEAD
                 filteredAddresses = addressCollection;//rrken search null tjib les adress il kol mil db
+=======
+                filteredAddresses = addressCollection;//if the search null, we retrieve all addresses
+>>>>>>> 094fe2b (Second Commit)
             }
             var sortedAddresses = new List<AddressInformation>();
-            if (typeof(AddressInformation).GetProperties().Any(p=>p.Name==sort))//aa
+            if (typeof(AddressInformation).GetProperties().Any(p=>p.Name==sort))
             {
                 sortedAddresses = filteredAddresses.OrderBy(x => x.GetType().GetProperty(sort).GetValue(x, null)).ToList();
 
