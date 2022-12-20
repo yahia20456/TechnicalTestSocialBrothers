@@ -18,16 +18,13 @@ namespace TechnicalTestSocialBrothers.Controllers
         public AddressController(IAddressRepository addressRepository,AddressContext addressContext)
         {
             this.addressRepository = addressRepository;
-            this.addresscontext = addressContext;
+           
         }
         [HttpGet]
         public async Task<ActionResult<IEnumerable<AddressInformation>>> GetAddresses( string search,  string sort,  bool isAscending)
         {
-<<<<<<< HEAD
-            var addressCollection = await addresscontext.Adresses.ToListAsync();//All addresses from database
-=======
-            var addressCollection = await addresscontext.Adresses.ToListAsync();//list adress from database
->>>>>>> 094fe2b (Second Commit)
+
+            var addressCollection = await addresscontext.Adresses.ToListAsync();//All addresses from databa
             var filteredAddresses = new List<AddressInformation>();//empty list
             var addressProperties = typeof(AddressInformation).GetProperties();//all my properties (city,zip code ...)
             if (search != null)
@@ -47,11 +44,8 @@ namespace TechnicalTestSocialBrothers.Controllers
             }
             else
             {
-<<<<<<< HEAD
-                filteredAddresses = addressCollection;//rrken search null tjib les adress il kol mil db
-=======
-                filteredAddresses = addressCollection;//if the search null, we retrieve all addresses
->>>>>>> 094fe2b (Second Commit)
+
+                filteredAddresses = addressCollection;//If the search is null then retrieve all addresses
             }
             var sortedAddresses = new List<AddressInformation>();
             if (typeof(AddressInformation).GetProperties().Any(p=>p.Name==sort))
