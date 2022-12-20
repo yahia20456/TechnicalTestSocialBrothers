@@ -4,7 +4,6 @@ using TechnicalTestSocialBrothers.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
 // Add services to the container.
 builder.Services.AddScoped<IAddressRepository,AddressRepository>();
 builder.Services.AddDbContext<AddressContext>(o => o.UseSqlite("Data source=Addresses.db"));
