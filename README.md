@@ -19,3 +19,26 @@ The Second Part was challenging due to the limits mentionned (Not using if state
 Honnestly The last part was difficult for me , due to the shortage of time and the lack of experience with this kind of Apis ,and Unfortunately i didn't complete it , But after a long search i think that the difficulty is accumulated on the configuration of the Api and the geocoding of the addresses then we can use a lot of methods to calculate distance.
 Generally, I'm Not satisified with my work beacause i know that i have the skills to do better and i hope that i get a second chance to prove that .
 # Swagger Documentation
+This repository contains a controller which is dealing with AdressInformation. You can GET/POST/PUT and DELETE them.
+
+Hope this helps.
+
+See the examples here :
+https://localhost:7248/swagger/index.html
+![image](https://user-images.githubusercontent.com/73944085/208802378-8ebea29a-c167-485e-a873-9fecf807d5f2.png)
+
+1- Add an Address
+{
+  "id": 6,
+  "street": "Messadi Tazarka",
+  "houseNumber": 8027,
+  "zipCode": 8046,
+  "city": "Nabeul",
+  "country": "Tunisia"
+}
+![image](https://user-images.githubusercontent.com/73944085/208802758-ba382c45-6a4e-4f68-a6ce-de135c64c455.png)
+2- Update an Address
+![image](https://user-images.githubusercontent.com/73944085/208802967-5639ef1a-5292-48b7-a4ee-332fa93b3fc9.png)
+3- Retrieve Address with Id
+![image](https://user-images.githubusercontent.com/73944085/208803056-12fc5430-8812-4e98-803d-4b996fd9d624.png)
+4- Get Addresses with filter
