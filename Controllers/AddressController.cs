@@ -18,13 +18,13 @@ namespace TechnicalTestSocialBrothers.Controllers
         public AddressController(IAddressRepository addressRepository,AddressContext addressContext)
         {
             this.addressRepository = addressRepository;
-           
+            this.addresscontext = addressContext;
         }
         [HttpGet]
         public async Task<ActionResult<IEnumerable<AddressInformation>>> GetAddresses( string search,  string sort,  bool isAscending)
         {
 
-            var addressCollection = await addresscontext.Adresses.ToListAsync();//All addresses from databa
+            var addressCollection = await addresscontext.Adresses.ToListAsync(); //All addresses from databa
             var filteredAddresses = new List<AddressInformation>();//empty list
             var addressProperties = typeof(AddressInformation).GetProperties();//all my properties (city,zip code ...)
             if (search != null)
